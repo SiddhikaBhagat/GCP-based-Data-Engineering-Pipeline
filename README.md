@@ -32,9 +32,11 @@ Google Cloud Platform
 4. BigQuery
 5. Looker Studio
 
-Modern Data Pipeine Tool - https://www.mage.ai/
+## Data Model
 
-Contibute to this open source project - https://github.com/mage-ai/mage-ai
+The data is modeled using a star schema, a common technique for data warehousing that simplifies queries and improves performance. This model consists of a central fact table surrounded by multiple dimension tables.
+
+<img src="data_model.jpeg">
 
 
 ## Dataset Used
