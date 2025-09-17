@@ -1,4 +1,4 @@
-GCP-based Data Engineering Pipeline
+###GCP-based Data Engineering Pipeline
 This project is an end-to-end data engineering pipeline that processes, transforms, and analyzes Uber trip data. It demonstrates a complete workflow from raw data ingestion to a business intelligence-ready data warehouse, leveraging modern cloud technologies and data engineering principles.
 
 Key Features
@@ -57,5 +57,6 @@ Configure your GCP service account credentials within the Mage project.
 
 Usage
 Within the Mage UI, navigate to the pipeline and run the defined blocks.
+
 
 The data will be processed and loaded into your specified BigQuery dataset, ready for querying or use with a business intelligence tool.
