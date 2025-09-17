@@ -4,6 +4,21 @@
 
 This project is an end-to-end data engineering pipeline that processes, transforms, and analyzes Uber trip data. It demonstrates a complete workflow from raw data ingestion to a business intelligence-ready data warehouse, leveraging modern cloud technologies and data engineering principles.
 
+## Key Features
+ - **Automated Data Ingestion** : Automates the extraction of raw Uber trip data and loads it into a cloud storage bucket.
+
+ - **Data Transformation** : Uses Python to clean and structure the raw data, making it ready for analysis.
+
+ - **Workflow Orchestration** : Manages and automates the entire pipeline using Mage, a user-friendly, notebook-based orchestration tool.
+
+ - **Cloud Integration** : The entire pipeline is deployed and runs on Google Cloud Platform (GCP).
+
+ - **Dimensional Modeling** : The transformed data is structured using a star schema to optimize it for fast querying and reporting.
+
+ - **Data Warehousing** : Loads the processed data into BigQuery, a scalable and serverless cloud data warehouse.
+
+ - Built a final dashboard to visualize key business insights, including trip trends and geospatial analysis.
+
 ## Architecture 
 <img src="architecture.jpg">
 
