@@ -87,17 +87,17 @@ def transform(df, *args, **kwargs):
     payment_type_dim['payment_type_name'] = payment_type_dim['payment_type'].map(payment_type_name)
     payment_type_dim = payment_type_dim[['payment_type_id','payment_type','payment_type_name']]
 
-    fact_table = df.merge(passenger_count_dim, on='passenger_count') \
-                 .merge(trip_distance_dim, on='trip_distance') \
-                 .merge(rate_code_dim, on='RatecodeID') \
-                 .merge(pickup_location_dim, on=['pickup_longitude', 'pickup_latitude']) \
-                 .merge(dropoff_location_dim, on=['dropoff_longitude', 'dropoff_latitude'])\
-                 .merge(datetime_dim, on=['tpep_pickup_datetime','tpep_dropoff_datetime']) \
-                 .merge(payment_type_dim, on='payment_type') \
-                 [['VendorID', 'datetime_id', 'passenger_count_id',
-                   'trip_distance_id', 'rate_code_id', 'store_and_fwd_flag', 'pickup_location_id', 'dropoff_location_id',
-                   'payment_type_id', 'fare_amount', 'extra', 'mta_tax', 'tip_amount', 'tolls_amount',
-                   'improvement_surcharge', 'total_amount']]
+    fact_table = df.merge(passenger_count_dim, left_on='passenger_count', right_on='passenger_count') \
+             .merge(trip_distance_dim, left_on='trip_distance', right_on='trip_distance') \
+             .merge(rate_code_dim, left_on='RatecodeID', right_on='RatecodeID') \
+             .merge(pickup_location_dim, left_on=['pickup_longitude', 'pickup_latitude'], right_on=['pickup_longitude', 'pickup_latitude']) \
+             .merge(dropoff_location_dim, left_on=['dropoff_longitude', 'dropoff_latitude'], right_on=['dropoff_longitude', 'dropoff_latitude']) \
+             .merge(datetime_dim, left_on=['tpep_pickup_datetime','tpep_dropoff_datetime'], right_on=['tpep_pickup_datetime', 'tpep_dropoff_datetime']) \
+             .merge(payment_type_dim, left_on='payment_type', right_on='payment_type') \
+             [['trip_id', 'VendorID', 'datetime_id', 'passenger_count_id',
+               'trip_distance_id', 'rate_code_id', 'store_and_fwd_flag', 'pickup_location_id', 'dropoff_location_id',
+               'payment_type_id', 'fare_amount', 'extra', 'mta_tax', 'tip_amount', 'tolls_amount',
+               'improvement_surcharge', 'total_amount']]
     
     return {"datetime_dim":datetime_dim,
     "passenger_count_dim":passenger_count_dim,
