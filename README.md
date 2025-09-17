@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The goal of this project is to perform data analytics on Uber data using various tools and technologies, including GCP Storage, Python, Compute Instance, Mage Data Pipeline Tool, BigQuery, and Looker Studio.
+This project is an end-to-end data engineering pipeline that processes, transforms, and analyzes Uber trip data. It demonstrates a complete workflow from raw data ingestion to a business intelligence-ready data warehouse, leveraging modern cloud technologies and data engineering principles.
 
 ## Architecture 
 <img src="architecture.jpg">
@@ -12,9 +12,10 @@ The goal of this project is to perform data analytics on Uber data using various
 
 Google Cloud Platform
 1. Google Storage
-2. Compute Instance 
-3. BigQuery
-4. Looker Studio
+2. Compute Instance
+3. Orchestration: Mage
+4. BigQuery
+5. Looker Studio
 
 Modern Data Pipeine Tool - https://www.mage.ai/
 
